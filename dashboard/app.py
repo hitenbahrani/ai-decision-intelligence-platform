@@ -37,8 +37,13 @@ require_file(f"{ARTIFACTS_DIR}/fairness_df.csv")
 decision_df = load_csv(f"{ARTIFACTS_DIR}/decision_df.csv")
 fairness_df = load_csv(f"{ARTIFACTS_DIR}/fairness_df.csv")
 
-st.success("✅ Using precomputed, governed decision artifacts (production-safe)")
-
+st.success(
+    "✅ Governed AI Decision System Active\n\n"
+    "- Models trained offline\n"
+    "- Decisions policy-controlled\n"
+    "- Explanations & fairness audited\n"
+    "- Dashboard consumes artifacts only"
+)
 # -----------------------------
 # Sidebar controls
 # -----------------------------
@@ -74,7 +79,7 @@ def apply_policy(prob):
     return "Manual Review"
 
 # -----------------------------
-# SECTION A: Decision Overview
+# SECTION A: Policy Decision Outcomes
 # -----------------------------
 st.subheader("A) Decision Outcomes Overview")
 
@@ -110,7 +115,7 @@ ax.set_ylabel("Number of Customers")
 st.pyplot(fig)
 
 # -----------------------------
-# SECTION C: Customer Explainability
+# SECTION C: Customer Decision Explanation (SHAP)
 # -----------------------------
 st.subheader("C) Customer Reason Codes")
 
